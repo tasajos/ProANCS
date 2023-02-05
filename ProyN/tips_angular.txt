@@ -16,4 +16,11 @@ Services
 Shared
 -create folder
 Interfaces
--ng g i interfaces/interf 
+-ng g i interfaces/interf
+
+6.- Direccionar al Componente
+Verifica en el componente el nombre de la ruta
+Ejemplo:
+<app-principal>
+lo ubicas en app.component.Ts
+luego lo cargas en app.component.html

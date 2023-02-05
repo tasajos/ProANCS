@@ -8,3 +8,5 @@ ng serve --o
 o -> Forzar Inicio web
 
 
+2.- Comentar
+<!--asdasdwe -->
