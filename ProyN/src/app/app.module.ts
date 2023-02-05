@@ -11,6 +11,10 @@ import { EliminarUsuarioComponent } from './Components/eliminar-usuario/eliminar
 
 //Angular modulos
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatCardModule
+   
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

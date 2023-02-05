@@ -1,0 +1,21 @@
+.title{
+    
+padding: 30px;
+background-color: cadetblue;
+text-align: center;
+color:chartreuse;
+
+}
+.card{
+    margin-top: 10px;
+    background-color:floralwhite;
+   color:cadetblue
+    
+}
+.container{
+margin: 0 20%;
+
+}
+.sub{
+    color: black;
+}
