@@ -15,6 +15,10 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -31,11 +35,16 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule
    
  
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
