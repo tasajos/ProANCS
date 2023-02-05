@@ -1,0 +1,10 @@
+****************************
+comandos
+***************************
+
+1.- Iniciar Servidor
+ng serve --o
+
+o -> Forzar Inicio web
+
+

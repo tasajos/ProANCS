@@ -1,0 +1,19 @@
+**************************
+troubleshooting guide
+**********************
+
+1.- How do you successfully change execution policy and enable execution of PowerShell scripts
+
+r.
+
+a) PowerShell as Administrator
+Set-ExecutionPolicy Unrestricted
+
+Then restart VC
+
+
+b)Set-ItemProperty -path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell" EnableScripts 1
+Then restart VC
+
+c)ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+Then restart VC
