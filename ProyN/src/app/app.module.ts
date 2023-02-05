@@ -14,6 +14,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {MatCardModule} from '@angular/material/card';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
    
  
   ],
