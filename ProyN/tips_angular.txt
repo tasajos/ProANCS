@@ -1,0 +1,19 @@
+***************************************
+TIPS PROYECTO
+***************************************
+
+1.- Instalar NODE Js
+2.- Instalar Angular CLI
+3.- Instalar GIT hub y sincronizar repo en VC
+4.- Instalar Angular Material
+ ng add @angular/material 
+5.- Estructura de Angular
+
+Componentes
+-ng g c components/addu
+Services
+-ng g s services/susuario 
+Shared
+-create folder
+Interfaces
+-ng g i interfaces/interf 
