@@ -18,7 +18,20 @@
             <input matInput>
                      </mat-form-field>
     </mat-grid-tile>  
-    <mat-grid-tile [colspan]="2"> 
+    <mat-grid-tile> 
+        <mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <input matInput>
+                 </mat-form-field>
+</mat-grid-tile>  
+<mat-grid-tile> 
+    <mat-form-field appearance="fill">
+    <mat-label>Celular</mat-label>
+    <input matInput>
+             </mat-form-field>
+</mat-grid-tile>  
+    <br>
+       <mat-grid-tile [colspan]="2"> 
         <mat-form-field appearance="fill" class="fde">
         <mat-label class="fde">Ubicacion</mat-label>
         <input matInput>
@@ -29,6 +42,7 @@
             <button mat-flat-button color="primary" routerLink="" class="btn"> REGISTRAR</button>
         </mat-grid-tile>
       </mat-grid-list>
+       
     </form> 
 </mat-card>
 </div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ProyBEND.props" />
+</Project>

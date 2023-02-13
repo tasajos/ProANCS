@@ -19,3 +19,12 @@ margin: 0 20%;
 .sub{
     color: black;
 }
+
+.footer{
+    
+    padding: 10px;
+    background-color:floralwhite;
+    text-align: left;
+    color:lightslategrey
+    
+    }
