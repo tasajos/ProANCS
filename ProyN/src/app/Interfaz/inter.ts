@@ -7,6 +7,3 @@ telefono:number,
 ubicacion: string,
 tipo: string,
 }
-
-
-
