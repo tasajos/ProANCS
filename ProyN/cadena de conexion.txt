@@ -1,0 +1,14 @@
+cadena de conexion
+
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+
+
+Instancia
+SQLEXPRESS
+
+administradores de sql
+DESKTOP-PKULQVH\Taboada
+
+DESKTOP-PKULQVH\SQLEXPRESS
