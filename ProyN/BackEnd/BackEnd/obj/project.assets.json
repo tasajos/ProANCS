@@ -3911,19 +3911,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carlos.azcarraga\\.nuget\\packages\\": {}
+    "C:\\Users\\Taboada\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProyANC\\ProANCS\\ProyN\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "F:\\PROYNC\\ProyN\\BackEnd\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\ProyANC\\ProANCS\\ProyN\\BackEnd\\BackEnd\\BackEnd.csproj",
-      "packagesPath": "C:\\Users\\carlos.azcarraga\\.nuget\\packages\\",
-      "outputPath": "C:\\ProyANC\\ProANCS\\ProyN\\BackEnd\\BackEnd\\obj\\",
+      "projectPath": "F:\\PROYNC\\ProyN\\BackEnd\\BackEnd\\BackEnd.csproj",
+      "packagesPath": "C:\\Users\\Taboada\\.nuget\\packages\\",
+      "outputPath": "F:\\PROYNC\\ProyN\\BackEnd\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\carlos.azcarraga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Taboada\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3991,7 +3991,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
