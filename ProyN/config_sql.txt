@@ -4,3 +4,22 @@ Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
 Nombre de instancia
 
 SQLEXPRESS
+
+LAPTOP-07E1H27S\SQLEXPRESS
+
+
+#ERRORES DE CONEXION
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.)
+
+SOLUCION
+Open "SQL Server Configuration Manager"
+
+Now Click on "SQL Server Network Configuration" and Click on "Protocols for Name"
+
+Right Click on "TCP/IP" (make sure it is Enabled) Click on Properties
+
+Now Select "IP Addresses" Tab -and- Go to the last entry "IP All"
+
+Enter "TCP Port" 1433.
+
+Now Restart "SQL Server .Name." using "services.msc" (winKey + r)
