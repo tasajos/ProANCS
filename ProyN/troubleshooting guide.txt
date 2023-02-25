@@ -17,3 +17,8 @@ Then restart VC
 
 c)ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Then restart VC
+
+
+2.- Verify Services
+- Go to win+restart
+- type Services.msc 
