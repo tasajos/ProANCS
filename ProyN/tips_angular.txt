@@ -26,3 +26,7 @@ lo ubicas en app.component.Ts
 luego lo cargas en app.component.html
 
 7.- Añadir angular material
+
+
+8.- para registrar un id
+id?: number

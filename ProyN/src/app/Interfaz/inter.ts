@@ -1,6 +1,6 @@
 export interface Inter {
 // columna db 
-id: number,
+id?: number,
 nombre: string,
 apellido: string,
 telefono:number,
