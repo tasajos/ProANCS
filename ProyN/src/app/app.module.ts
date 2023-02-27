@@ -20,6 +20,7 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/mater
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -42,7 +43,8 @@ import {MatListModule} from '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule
    
  
   ],
