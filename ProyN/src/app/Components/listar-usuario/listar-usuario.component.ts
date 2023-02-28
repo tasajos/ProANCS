@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 
@@ -17,11 +18,17 @@ const listPersonal: Inter[] = [
   templateUrl: './listar-usuario.component.html',
   styleUrls: ['./listar-usuario.component.css']
 })
+
+
 export class ListarUsuarioComponent implements OnInit,AfterViewInit{
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
 
   ngAfterViewInit(): void{
     this.dataSource.paginator = this.paginator;
     this.paginator._intl.itemsPerPageLabel = 'Items Por Pagina'
+    this.dataSource.sort = this.sort;
     
 
   }
@@ -30,5 +37,6 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
   }
   displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo'];
   dataSource = new MatTableDataSource<Inter>(listPersonal);
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  
 }

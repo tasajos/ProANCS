@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -44,7 +45,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     MatTableModule,
     MatListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
    
  
   ],
