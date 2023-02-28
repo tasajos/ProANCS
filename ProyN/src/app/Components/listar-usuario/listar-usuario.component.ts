@@ -10,6 +10,10 @@ const listPersonal: Inter[] = [
   {nombre:"Andres",apellido:"perez",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
   {nombre:"javier",apellido:"melgar",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
   {nombre:"Alejandro",apellido:"resinda",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
+  {nombre:"cecilio",apellido:"azcarraga",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
+  {nombre:"rara",apellido:"perez",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
+  {nombre:"marcelo",apellido:"melgar",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
+  {nombre:"paolos",apellido:"resinda",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
 ];
 
 
@@ -32,10 +36,14 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     
 
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase()}
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo'];
+  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
   dataSource = new MatTableDataSource<Inter>(listPersonal);
 
   

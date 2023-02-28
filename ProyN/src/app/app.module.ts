@@ -22,6 +22,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -46,7 +48,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatListModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule,
+    MatTooltipModule
    
  
   ],

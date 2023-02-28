@@ -35,3 +35,19 @@ table {
       .fde{
         width: 100%;
       }
+      .mat-mdc-form-field {
+        font-size: 14px;
+        width: 100%;
+      }
+      .delete {
+      cursor:pointer;
+      color:red;
+      }
+     .search {
+        cursor:pointer;
+        color:blue;
+        }
+    .edit {
+          cursor:pointer;
+          color:cadetblue;
+          }
