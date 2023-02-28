@@ -44,6 +44,8 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     this._personalService.getPersonal().subscribe(data =>
       {
        this.dataSource.data = data;
+      },error => {
+        alert ('error al cargar datos')
       }
       )
   }
