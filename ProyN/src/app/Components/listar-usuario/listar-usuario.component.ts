@@ -45,7 +45,7 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
       {
        this.dataSource.data = data;
       },error => {
-        alert ('error al cargar datos')
+        alert ('error al cargar datoss')
       }
       )
   }

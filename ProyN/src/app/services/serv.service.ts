@@ -17,5 +17,9 @@ export class ServService {
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
     }
+    addPersonal  (personal: Inter): Observable<Inter>{
+
+      return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
+    }
    }
 
