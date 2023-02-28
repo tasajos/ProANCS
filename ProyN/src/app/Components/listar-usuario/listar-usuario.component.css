@@ -51,3 +51,8 @@ table {
           cursor:pointer;
           color:cadetblue;
           }
+    .btnaceptar {
+      font-size: 10px;
+      line-height: 28px;
+
+      }
