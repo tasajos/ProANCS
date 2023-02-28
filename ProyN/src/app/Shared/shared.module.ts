@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 
 //Angular Modulos
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,6 +15,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [],
@@ -31,7 +32,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
    
   ],
   exports: [
@@ -47,7 +49,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
    
   ]
 })

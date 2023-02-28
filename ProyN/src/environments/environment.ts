@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    endpoint: ' http://localhost:4200/'
+    endpoint: ' http://localhost:7105/'
    
 
     
