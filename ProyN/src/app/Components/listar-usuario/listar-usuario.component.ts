@@ -3,18 +3,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
+import { ServService } from 'src/app/services/serv.service';
 
 
-const listPersonal: Inter[] = [
-  {nombre:"Carlos",apellido:"azcarraga",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
-  {nombre:"Andres",apellido:"perez",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
-  {nombre:"javier",apellido:"melgar",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
-  {nombre:"Alejandro",apellido:"resinda",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
-  {nombre:"cecilio",apellido:"azcarraga",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
-  {nombre:"rara",apellido:"perez",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
-  {nombre:"marcelo",apellido:"melgar",telefono:70776212,ubicacion:"mirador",tipo:"empleado"},
-  {nombre:"paolos",apellido:"resinda",telefono:70776212,ubicacion:"mirador",tipo:"Administrador"},
-];
+
 
 
 @Component({
@@ -25,8 +17,15 @@ const listPersonal: Inter[] = [
 
 
 export class ListarUsuarioComponent implements OnInit,AfterViewInit{
+
+  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
+  dataSource = new MatTableDataSource<Inter>();
+
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor (private _personalService:ServService) {}
 
 
   ngAfterViewInit(): void{
@@ -38,13 +37,21 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase()}
+    this.dataSource.filter = filterValue.trim().toLowerCase()
+  }
+  obtenerPersonal(){
+
+    this._personalService.getPersonal().subscribe(data =>
+      {
+       this.dataSource.data = data;
+      }
+      )
+  }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.obtenerPersonal();
+  
   }
-  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
-  dataSource = new MatTableDataSource<Inter>(listPersonal);
-
+  
   
 }
