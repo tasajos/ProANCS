@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Angular Modulos
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -15,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatIconModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
    
   ],
   exports: [
@@ -50,8 +53,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatIconModule,
     MatTooltipModule,
-    HttpClientModule
-   
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

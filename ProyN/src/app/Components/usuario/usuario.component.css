@@ -24,7 +24,9 @@
     .btn{
         margin: 0 20%;
     }
-    
+    .btn2{
+      margin: 5px;
+  }
   
    .fondo{
         background-color:white;
@@ -32,3 +34,7 @@
       .fde{
         width: 100%;
       }
+    .mat-form-field {
+      width: 100%;
+      margin: 10px;
+    }
