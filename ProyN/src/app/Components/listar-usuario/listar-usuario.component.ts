@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ServService } from 'src/app/services/serv.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -21,7 +22,8 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor (private _personalService:ServService) {}
+  constructor (private _personalService:ServService,
+    private _snackBar: MatSnackBar,) {}
 
 
   ngAfterViewInit(): void{
@@ -50,6 +52,12 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     this.obtenerPersonal();
   
   }
-  
+  eliminarPersonal(){
+    this._snackBar.open("Registro del Personal eliminado",'',{
+      duration:1000
+
+    })
+    
+  }
   
 }

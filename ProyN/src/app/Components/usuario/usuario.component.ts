@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServService } from 'src/app/services/serv.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-usuario',
@@ -17,6 +18,7 @@ export class UsuarioComponent implements OnInit{
   id: number;
 
   constructor (private fb: FormBuilder, 
+    private _snackBar: MatSnackBar,
     private _personalesService:ServService,
     private aRoute: ActivatedRoute,
     private router: Router,) {
@@ -29,6 +31,8 @@ export class UsuarioComponent implements OnInit{
       ubicacion: ['',Validators.required],
     })
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
+
+    
   }
   
    
