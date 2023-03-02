@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inter } from 'src/app/Interfaz/inter';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServService } from 'src/app/services/serv.service';
 
 @Component({
   selector: 'app-usuario',
@@ -11,9 +13,14 @@ import { Inter } from 'src/app/Interfaz/inter';
 
 export class UsuarioComponent implements OnInit{
 
-  form:FormGroup
+  form:FormGroup;
+  id: number;
 
-  constructor (private fb: FormBuilder) {
+  constructor (private fb: FormBuilder, 
+    private _personalesService:ServService,
+    private aRoute: ActivatedRoute,
+    private router: Router,) {
+
     this.form = this.fb.group({
       nombre: ['',Validators.required],
       apellido: ['',Validators.required],
@@ -21,15 +28,34 @@ export class UsuarioComponent implements OnInit{
       telefono: ['',Validators.required],
       ubicacion: ['',Validators.required],
     })
-
+    this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
   }
   
    
   ngOnInit (): void {
   
   }
+
+  agregarEditarPersonal() {
+    /* const nombre = this.form.get('nombre')?.value; */
+
+    // Armamos el objeto
+    const personal: Inter = {
+      nombre: this.form.value.nombre,
+      apellido:this.form.value.apellido,
+      telefono:this.form.value.telefono,
+      ubicacion:this.form.value.ubicacion,
+      tipo:this.form.value.tipo
+    }
+
+
+  }
+
   agregarPersonal(){
 
+    const nombre=this.form.value.nombre;
+
+    //armamos el objeto
     const personal: Inter ={
       nombre: this.form.value.nombre,
       apellido:this.form.value.apellido,
@@ -39,7 +65,19 @@ export class UsuarioComponent implements OnInit{
        
 
     }
-    console.log(personal)
+    // Enviamos objeto al backend
+
+    this._personalesService.addPersonal(personal).subscribe(data => {
+      this.router.navigate(['/listar'])
+
+console.log(data)
+
+    })
+
+    //this._personalesService.addPersonal(personal).subscribe(data => 
+     
+      
+      
   }
 
 }
