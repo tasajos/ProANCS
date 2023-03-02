@@ -5,10 +5,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ServService } from 'src/app/services/serv.service';
 
-
-
-
-
 @Component({
   selector: 'app-listar-usuario',
   templateUrl: './listar-usuario.component.html',

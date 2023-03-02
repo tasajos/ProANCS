@@ -11,6 +11,7 @@ import { EliminarUsuarioComponent } from './Components/eliminar-usuario/eliminar
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './Shared/shared.module';
+import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
 
 //Angular modulos
 
@@ -24,7 +25,8 @@ import { SharedModule } from './Shared/shared.module';
     PrincipalComponent,
     UsuarioComponent,
     ListarUsuarioComponent,
-    EliminarUsuarioComponent
+    EliminarUsuarioComponent,
+    VerUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,7 @@ import { SharedModule } from './Shared/shared.module';
 
  
   ],
-  providers: [
-    
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
