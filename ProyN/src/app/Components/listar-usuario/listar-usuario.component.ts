@@ -17,6 +17,7 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
   displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
   dataSource = new MatTableDataSource<Inter>();
+  loading:boolean =false;
 
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
