@@ -32,6 +32,7 @@ export class UsuarioComponent implements OnInit{
       tipo: ['',Validators.required],
       telefono: ['',Validators.required],
       ubicacion: ['',Validators.required],
+      detalle: ['',Validators.required],
     })
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
 
@@ -52,7 +53,8 @@ export class UsuarioComponent implements OnInit{
       apellido:this.form.value.apellido,
       telefono:this.form.value.telefono,
       ubicacion:this.form.value.ubicacion,
-      tipo:this.form.value.tipo
+      tipo:this.form.value.tipo,
+      detalle:this.form.value.tipo,
     }
 
 
@@ -68,7 +70,8 @@ export class UsuarioComponent implements OnInit{
       apellido:this.form.value.apellido,
       telefono:this.form.value.telefono,
       ubicacion:this.form.value.ubicacion,
-      tipo:this.form.value.tipo
+      tipo:this.form.value.tipo,
+      detalle:this.form.value.tipo,
        
 
     }
@@ -83,7 +86,7 @@ export class UsuarioComponent implements OnInit{
          
   }
   mensajeExito(texto: string) {
-    this._snackBar.open(`La Mascota fue ${texto} con exito`,'', {
+    this._snackBar.open(`El Registro fue realizado ${texto} con exito`,'', {
       duration: 4000,
       horizontalPosition: 'right',
     });

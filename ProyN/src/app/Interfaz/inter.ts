@@ -5,5 +5,6 @@ nombre: string,
 apellido: string,
 telefono:number,
 ubicacion: string,
-tipo: string
+tipo: string,
+detalle:string
 }
