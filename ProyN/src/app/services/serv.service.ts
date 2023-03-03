@@ -18,10 +18,12 @@ export class ServService {
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
     }
    
+    //addPersonal  (): Observable<Inter>{
     addPersonal  (personal: Inter): Observable<Inter>{
 
       return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
-     //return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl),personal;
+      //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
+    // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
     }
    }
 
