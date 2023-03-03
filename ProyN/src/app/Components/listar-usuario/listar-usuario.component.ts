@@ -4,10 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ServService } from 'src/app/services/serv.service';
-
-
-
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -20,12 +17,14 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
   displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
   dataSource = new MatTableDataSource<Inter>();
+  loading:boolean =false;
 
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor (private _personalService:ServService) {}
+  constructor (private _personalService:ServService,
+    private _snackBar: MatSnackBar,) {}
 
 
   ngAfterViewInit(): void{
@@ -44,6 +43,8 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     this._personalService.getPersonal().subscribe(data =>
       {
        this.dataSource.data = data;
+      },error => {
+        alert ('error al cargar datoss')
       }
       )
   }
@@ -52,6 +53,12 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     this.obtenerPersonal();
   
   }
-  
+  eliminarPersonal(){
+    this._snackBar.open("Registro del Personal eliminado",'',{
+      duration:1000
+
+    })
+    
+  }
   
 }

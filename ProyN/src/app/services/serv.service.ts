@@ -9,6 +9,7 @@ import { Inter } from '../Interfaz/inter';
 })
 export class ServService {
   private Myappurl: string = environment.endpoint;
+  //private Myappurl: string = "localhost/7105/";
   private Myapiurl: string = 'api/personal/';
 
   constructor(private http: HttpClient) {}
@@ -16,6 +17,14 @@ export class ServService {
 
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
+    }
+   
+    //addPersonal  (): Observable<Inter>{
+    addPersonal  (personal: Inter): Observable<Inter>{
+
+      return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
+      //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
+    // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
     }
    }
 

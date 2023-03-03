@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Angular Modulos
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
@@ -15,10 +16,18 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
+// Componentes
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SpinnerComponent
+  ],
   imports: [
     CommonModule,
     MatSlideToggleModule,
@@ -33,7 +42,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatIconModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatProgressBarModule
    
   ],
   exports: [
@@ -50,8 +62,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatSortModule,
     MatIconModule,
     MatTooltipModule,
-    HttpClientModule
-   
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    SpinnerComponent,
+    MatProgressBarModule
   ]
 })
 export class SharedModule { }
