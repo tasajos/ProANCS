@@ -9,6 +9,7 @@ import { Inter } from '../Interfaz/inter';
 })
 export class ServService {
   private Myappurl: string = environment.endpoint;
+  //private Myappurl: string = "localhost/7105/";
   private Myapiurl: string = 'api/personal/';
 
   constructor(private http: HttpClient) {}
