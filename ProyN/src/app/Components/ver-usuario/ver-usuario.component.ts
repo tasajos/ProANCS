@@ -12,6 +12,7 @@ export class VerUsuarioComponent implements OnInit{
 
 id:number;
 idpersonal! : Inter;
+loading:boolean = false;
 
   constructor (private _verpesonalservice:ServService,
     private aRoute: ActivatedRoute) {

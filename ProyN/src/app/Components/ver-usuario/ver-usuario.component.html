@@ -1,7 +1,9 @@
 <div class="title">
     <H1>VER USUARIO</H1> 
 </div>
+<app-spinner *ngIf="loading"></app-spinner>
 <div *ngIf="idpersonal != null"class="container">
+    
     <mat-card class="card">
         
         <mat-card-title>{{idpersonal.nombre}}</mat-card-title>
