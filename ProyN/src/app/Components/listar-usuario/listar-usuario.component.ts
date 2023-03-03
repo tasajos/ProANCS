@@ -16,7 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
-  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
+  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','detalle','acciones'];
   dataSource = new MatTableDataSource<Inter>();
   loading:boolean =false;
 
