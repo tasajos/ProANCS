@@ -87,7 +87,7 @@ export class UsuarioComponent implements OnInit{
   }
   mensajeExito(texto: string) {
     this._snackBar.open(`El Registro fue realizado ${texto} con exito`,'', {
-      duration: 4000,
+      duration: 2000,
       horizontalPosition: 'right',
     });
   }
