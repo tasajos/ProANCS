@@ -54,7 +54,7 @@ export class UsuarioComponent implements OnInit{
       telefono:this.form.value.telefono,
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
-      detalle:this.form.value.tipo,
+      detalle:this.form.value.detalle,
     }
 
 
@@ -71,7 +71,7 @@ export class UsuarioComponent implements OnInit{
       telefono:this.form.value.telefono,
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
-      detalle:this.form.value.tipo,
+      detalle:this.form.value.detalle,
        
 
     }

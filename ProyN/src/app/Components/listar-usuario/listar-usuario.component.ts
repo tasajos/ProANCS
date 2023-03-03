@@ -4,7 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ServService } from 'src/app/services/serv.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -42,11 +43,13 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
     this._personalService.getPersonal().subscribe(data =>
       {
+        this.loading =false;
        this.dataSource.data = data;
-      },error => {
-        alert ('error al cargar datoss')
-      }
-      )
+      }, _error => {
+        this.loading =false;
+        alert("Error" )
+      })
+      
   }
 
   ngOnInit(): void {
