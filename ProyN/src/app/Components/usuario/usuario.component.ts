@@ -60,7 +60,7 @@ export class UsuarioComponent implements OnInit{
 
   agregarPersonal(){
 
-    const nombre=this.form.value.nombre;
+   
 
     //armamos el objeto
     const personal: Inter = {
@@ -75,7 +75,7 @@ export class UsuarioComponent implements OnInit{
     console.log(personal)
     // Enviamos objeto al backend
 
-    this._personalesService.addPersonal(personal).subscribe(data => {
+    this._personalesService.addPersonal(personal).subscribe(_data => {
       this.mensajeExito('registrada');
       this.router.navigate(['/listar']);
     })
