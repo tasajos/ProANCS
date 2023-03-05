@@ -68,7 +68,7 @@ this.obtenerPersonal();
   }
   mensajeExito(){
     this._snackBar.open(" eliminado",'',{
-      duration:2000
+      duration:3000
   }
 )}
 }
