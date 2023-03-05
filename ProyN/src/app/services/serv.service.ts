@@ -31,5 +31,8 @@ export class ServService {
       //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
     // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
     }
+    deletePersonal(id:number): Observable<void>{
+     return this.http.delete<void>(`${this.Myappurl}${this.Myapiurl}${id}`);
+    }
    }
 

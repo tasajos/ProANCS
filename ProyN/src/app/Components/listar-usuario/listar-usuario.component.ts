@@ -56,12 +56,19 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
     this.obtenerPersonal();
   
   }
-  eliminarPersonal(){
-    this._snackBar.open("Registro del Personal eliminado",'',{
-      duration:1000
-
+  eliminarPersonal(id:number){
+    this.loading =true;
+    this._personalService.deletePersonal(id).subscribe(() =>{
+this.mensajeExito();
+this.loading=false;
+this.obtenerPersonal();
     })
     
+    
   }
-  
+  mensajeExito(){
+    this._snackBar.open(" eliminado",'',{
+      duration:1000
+  }
+)}
 }
