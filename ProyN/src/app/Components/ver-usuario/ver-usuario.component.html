@@ -1,13 +1,19 @@
 <div class="title">
     <H1>VER USUARIO</H1> 
 </div>
-<div class="container">
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="idpersonal != null"class="container">
+    
     <mat-card class="card">
-        <mat-card-title>Carlos</mat-card-title>
+        
+        <mat-card-title>{{idpersonal.nombre}}</mat-card-title>
+        <p></p>
+        <p></p>
                    <mat-card-content>
-                <p><strong>Apellido:</strong> Azcarraga </p>
-                <p><strong>Tipo:</strong> Administrador </p>
-                <p><strong>Telefono:</strong> 70776212 </p>
+                <p><strong>Apellido:</strong>{{idpersonal.apellido}} </p>
+                <p><strong>Tipo:</strong> {{idpersonal.tipo}} </p>
+                <p><strong>Telefono:</strong> {{idpersonal.telefono}} </p>
+                <p><strong>Detalle:</strong> {{idpersonal.detalle}} </p>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-flat-button color="primary" routerLink="/listar">Volver</button>

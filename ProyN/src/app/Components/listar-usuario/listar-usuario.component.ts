@@ -4,7 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ServService } from 'src/app/services/serv.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -15,7 +16,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 
 export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
-  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','acciones'];
+  displayedColumns: string[] = ['nombre','apellido','telefono','ubicacion','tipo','detalle','acciones'];
   dataSource = new MatTableDataSource<Inter>();
   loading:boolean =false;
 
@@ -42,23 +43,32 @@ export class ListarUsuarioComponent implements OnInit,AfterViewInit{
 
     this._personalService.getPersonal().subscribe(data =>
       {
+        this.loading =false;
        this.dataSource.data = data;
-      },error => {
-        alert ('error al cargar datoss')
-      }
-      )
+      }, _error => {
+        this.loading =false;
+        alert("Error" )
+      })
+      
   }
 
   ngOnInit(): void {
     this.obtenerPersonal();
   
   }
-  eliminarPersonal(){
-    this._snackBar.open("Registro del Personal eliminado",'',{
-      duration:1000
-
+  eliminarPersonal(id:number){
+    this.loading =true;
+    this._personalService.deletePersonal(id).subscribe(() =>{
+this.mensajeExito();
+this.loading=false;
+this.obtenerPersonal();
     })
     
+    
   }
-  
+  mensajeExito(){
+    this._snackBar.open(" eliminado",'',{
+      duration:1000
+  }
+)}
 }

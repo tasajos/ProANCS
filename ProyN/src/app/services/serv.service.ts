@@ -18,6 +18,11 @@ export class ServService {
       //return this.http.get<Inter[]>(`${this.Myappurl}${this.Myapiurl}`);
       return this.http.get<Inter[]>(this.Myappurl+this.Myapiurl);
     }
+    getidpersonal(id:number): Observable<Inter>{
+
+      return this.http.get<Inter>(`${this.Myappurl}${this.Myapiurl}${id}`)
+
+    }
    
     //addPersonal  (): Observable<Inter>{
     addPersonal  (personal: Inter): Observable<Inter>{
@@ -25,6 +30,9 @@ export class ServService {
       return this.http.post<Inter>(`${this.Myappurl}${this.Myapiurl}`,personal);
       //return this.http.post<Mascota>(`${this.myAppUrl}${this.myApiUrl}`, mascota);
     // return this.http.post<Inter[]>(this.Myappurl+this.Myapiurl)personal);
+    }
+    deletePersonal(id:number): Observable<void>{
+     return this.http.delete<void>(`${this.Myappurl}${this.Myapiurl}${id}`);
     }
    }
 
