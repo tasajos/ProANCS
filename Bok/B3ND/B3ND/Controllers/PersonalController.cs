@@ -45,7 +45,7 @@ namespace B3ND.Controllers
             try
             {
                 var personalss = await _context.Personales.FindAsync(Id);
-                return Ok (personalss);
+                return Ok(personalss);
 
             }
             catch (Exception ex)
@@ -54,7 +54,29 @@ namespace B3ND.Controllers
             }
         }
 
-            
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int Id)
+        {
+            try
+            {
+                var delete = await _context.Personales.FindAsync(Id);
+
+                if (delete == null)
+                {
+                    return NotFound();
+                }
+
+                _context.Personales.Remove(delete);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
 
         [HttpPost]
@@ -75,7 +97,14 @@ namespace B3ND.Controllers
             {
                 return BadRequest(ex.Message);
             }
+
+            
         }
 
+        
+
+
     }
+
+
 }
