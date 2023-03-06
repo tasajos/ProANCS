@@ -33,13 +33,12 @@ export class UsuarioComponent implements OnInit{
       telefono: ['',Validators.required],
       ubicacion: ['',Validators.required],
       detalle: ['',Validators.required],
+      
     })
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
-
     
-  }
+  } 
   
-   
   ngOnInit (): void {
   
   }
@@ -66,6 +65,7 @@ move(event: google.maps.MapMouseEvent) {
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+      
     }
 
 
@@ -83,6 +83,7 @@ move(event: google.maps.MapMouseEvent) {
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+      
        
 
     }
