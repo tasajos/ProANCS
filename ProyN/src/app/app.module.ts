@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './Shared/shared.module';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
 
-//Angular modulos
+//Angular modulo
 
 
 
