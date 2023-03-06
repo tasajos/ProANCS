@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 // Componentes
@@ -45,7 +46,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    GoogleMapsModule
+  
    
   ],
   exports: [
@@ -66,7 +69,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     SpinnerComponent,
-    MatProgressBarModule
+    MatProgressBarModule,
+    GoogleMapsModule
   ]
 })
 export class SharedModule { }

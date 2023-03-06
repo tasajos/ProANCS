@@ -54,13 +54,25 @@
 </mat-grid-tile>   
         
         <mat-grid-tile [colspan]="2">
-            <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
-            <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
+         <!--   <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
+            <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>-->
         </mat-grid-tile>
         
       </mat-grid-list>
        
+      <google-map height="400px"
+            width="750px"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+</google-map>
+
+<div>Latitude: {{display?.lat}}</div>
+<div>Longitude: {{display?.lng}}</div>
   
+<button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
+<button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
   
     </form> 
 </mat-card>

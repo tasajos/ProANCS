@@ -15,10 +15,6 @@ import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.compon
 
 //Angular modulo
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
