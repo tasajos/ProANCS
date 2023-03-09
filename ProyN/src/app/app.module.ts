@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import{ AngularFireModule } from '@angular/fire/compat';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { SharedModule } from './Shared/shared.module';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
 import { IULOGINComponent } from './Components/iulogin/iulogin.component';
 import { RecuperarComponent } from './Components/recuperar/recuperar.component';
+import { environment } from 'src/environments/environment';
 
 //Angular modulo
 
@@ -32,7 +35,8 @@ import { RecuperarComponent } from './Components/recuperar/recuperar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
     
 
  
