@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './Shared/shared.module';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
 import { IULOGINComponent } from './Components/iulogin/iulogin.component';
+import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 
 //Angular modulo
 
@@ -24,7 +25,8 @@ import { IULOGINComponent } from './Components/iulogin/iulogin.component';
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
     VerUsuarioComponent,
-    IULOGINComponent
+    IULOGINComponent,
+    RecuperarComponent
   ],
   imports: [
     BrowserModule,

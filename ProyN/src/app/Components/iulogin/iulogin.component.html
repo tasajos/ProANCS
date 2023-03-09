@@ -1,10 +1,25 @@
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+<div class="wrapper">
+    <div class="body">
 
-<button type="button" class="btn btn-link">Link</button>
+        <img class="logo" src="../../../assets/img/acceso.png" alt="Login">
+        <H1>  Login</H1>
+        <form>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control"  placeholder="name@example.com">
+                <label >Email</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control"  placeholder="Password">
+                <label>Password</label>
+              </div>
+              <div class="d-grid mt-3">
+                <button class="btn btn-primary btn-lg" type="button">Ingresar</button>
+              </div>
+              <p class="mt-2">Te olvidaste tu contraseña? <a routerLink="/recuperar">Recuperar Contraseña</a></p>
+
+        </form>
+    </div>
+    
+
+</div>
+

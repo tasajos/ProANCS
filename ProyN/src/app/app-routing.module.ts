@@ -5,6 +5,7 @@ import { EliminarUsuarioComponent } from './Components/eliminar-usuario/eliminar
 import { IULOGINComponent } from './Components/iulogin/iulogin.component';
 import { ListarUsuarioComponent } from './Components/listar-usuario/listar-usuario.component';
 import { PrincipalComponent } from './Components/principal/principal.component';
+import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
 {path: 'verusuarios/:id',component:VerUsuarioComponent},
 {path: 'editarusuarios/:id',component:UsuarioComponent},
 {path: 'uilogin',component:IULOGINComponent},
+{path: 'recuperar',component:RecuperarComponent},
 //{path: '**', redirectTo: 'principal', pathMatch:'full'},
 {path: '**', redirectTo: 'uilogin', pathMatch:'full'},
 ];
