@@ -30,3 +30,8 @@ luego lo cargas en app.component.html
 
 8.- para registrar un id
 id?: number
+
+
+//instalar firebase
+npm i --save firebase @angular/fire
+
