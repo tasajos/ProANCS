@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './Shared/shared.module';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
+import { IULOGINComponent } from './Components/iulogin/iulogin.component';
 
 //Angular modulo
 
@@ -22,7 +23,8 @@ import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.compon
     UsuarioComponent,
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
-    VerUsuarioComponent
+    VerUsuarioComponent,
+    IULOGINComponent
   ],
   imports: [
     BrowserModule,
