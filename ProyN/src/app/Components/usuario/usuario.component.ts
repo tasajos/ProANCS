@@ -4,7 +4,7 @@ import { Inter } from 'src/app/Interfaz/inter';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServService } from 'src/app/services/serv.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-usuario',
@@ -17,6 +17,7 @@ export class UsuarioComponent implements OnInit{
   loading:boolean = false;
   form:FormGroup;
   id: number;
+  
 
   operacion: string = 'Agregar';
 
@@ -31,7 +32,8 @@ export class UsuarioComponent implements OnInit{
       apellido: ['',Validators.required],
       tipo: ['',Validators.required],
       telefono: ['',Validators.required],
-      ubicacion: ['',Validators.required],
+      //ubicacion: ['',Validators.required],
+      ubicacion: [''], // initialize with empty string
       detalle: ['',Validators.required],
       
     })
@@ -51,8 +53,19 @@ export class UsuarioComponent implements OnInit{
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.center = (event.latLng.toJSON());
 }
+
+//move(event: google.maps.MapMouseEvent) {
+  //  if (event.latLng != null) this.display = event.latLng.toJSON();
+//}
+
 move(event: google.maps.MapMouseEvent) {
-    if (event.latLng != null) this.display = event.latLng.toJSON();
+  if (event.latLng != null) {
+    this.display = event.latLng.toJSON();
+    const ubicacion = this.form.get('ubicacion');
+    if (ubicacion != null) {
+      ubicacion.setValue(JSON.stringify(this.display));
+    }
+  }
 }
   agregarEditarPersonal() {
     /* const nombre = this.form.get('nombre')?.value; */
