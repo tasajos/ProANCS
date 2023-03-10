@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,7 +17,11 @@ export class UsuarioComponent implements OnInit{
   loading:boolean = false;
   form:FormGroup;
   id: number;
+ 
   
+ 
+
+ 
 
   operacion: string = 'Agregar';
 
@@ -116,6 +120,8 @@ move(event: google.maps.MapMouseEvent) {
       horizontalPosition: 'right',
     });
   }
+
+
 }
 
 
