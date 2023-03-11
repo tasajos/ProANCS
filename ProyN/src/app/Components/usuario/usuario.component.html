@@ -99,7 +99,8 @@
         </mat-grid-tile>
         
       </mat-grid-list>
-       
+
+          
       <google-map height="400px"
             width="750px"
             [center]="center"
@@ -110,6 +111,8 @@
 
 <div>Latitude: {{display?.lat}}</div>
 <div>Longitude: {{display?.lng}}</div>
+
+<div #mapContainer style="height: 300px;"></div>
   
 <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
 <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
@@ -117,6 +120,7 @@
     </form> 
 </mat-card>
 </div>
+
 <br>
 <br>
         <button mat-flat-button color="primary" routerLink="/principal" class="btn">Volver</button>

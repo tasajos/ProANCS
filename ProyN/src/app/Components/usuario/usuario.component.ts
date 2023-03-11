@@ -22,6 +22,11 @@ export class UsuarioComponent implements OnInit{
 
   operacion: string = 'Agregar';
 
+  @ViewChild('mapContainer') mapContainer!: ElementRef<HTMLDivElement>;
+
+  map!: google.maps.Map;
+
+
   constructor (private fb: FormBuilder, 
     private _snackBar: MatSnackBar,
     private _personalesService:ServService,
@@ -47,9 +52,15 @@ export class UsuarioComponent implements OnInit{
   } 
   
   ngOnInit (): void {
-  
+  const mapOptions: google.maps.MapOptions = {
+    center: this.center,
+    zoom: this.zoom,
+  };
+  this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+
   }
   display: any;
+  
   center: google.maps.LatLngLiteral = {
       lat: -17.3825,
       lng: -66.1682
@@ -90,7 +101,13 @@ move(event: google.maps.MapMouseEvent) {
       precio:this.form.value.precio,
       
     }
-
+    const ubicacionString = this.form.value.ubicacion;
+    const ubicacion = JSON.parse(ubicacionString);
+    const marker = new google.maps.Marker({
+      position: ubicacion,
+      map: this.map,
+      title: 'Ubicación actual',
+    });
 
   }
 
