@@ -6,6 +6,7 @@ import { ServService } from 'src/app/services/serv.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
+
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
