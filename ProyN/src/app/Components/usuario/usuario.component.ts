@@ -74,14 +74,26 @@ export class UsuarioComponent implements OnInit{
   //  if (event.latLng != null) this.display = event.latLng.toJSON();
 //}
 
-move(event: google.maps.MapMouseEvent) {
-  if (event.latLng != null) {
-    this.display = event.latLng.toJSON();
-    const ubicacion = this.form.get('ubicacion');
-    if (ubicacion != null) {
-      ubicacion.setValue(JSON.stringify(this.display));
+
+
+//move(event: google.maps.MapMouseEvent) {
+  //if (event.latLng != null) {
+   // this.display = event.latLng.toJSON();
+    //const ubicacion = this.form.get('ubicacion');
+    //if (ubicacion != null) {
+      //ubicacion.setValue(JSON.stringify(this.display));
+    //}
+  //}
+  move(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) {
+      this.display = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+      const ubicacion = this.form.get('ubicacion');
+      if (ubicacion != null) {
+       // ubicacion.setValue(JSON.stringify(this.display));
+       ubicacion.setValue(`${this.display.lat},${this.display.lng}`);
+      }
     }
-  }
+
 }
   agregarEditarPersonal() {
     /* const nombre = this.form.get('nombre')?.value; */
@@ -101,13 +113,7 @@ move(event: google.maps.MapMouseEvent) {
       precio:this.form.value.precio,
       
     }
-    const ubicacionString = this.form.value.ubicacion;
-    const ubicacion = JSON.parse(ubicacionString);
-    const marker = new google.maps.Marker({
-      position: ubicacion,
-      map: this.map,
-      title: 'Ubicación actual',
-    });
+   
 
   }
 
