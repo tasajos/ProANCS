@@ -25,13 +25,22 @@
                      </mat-form-field>
     </mat-grid-tile>
 
-    <mat-grid-tile> 
+    <!--<mat-grid-tile> 
         <mat-form-field appearance="outline" class="fde" class="mat-form-field">
         <mat-label>Tipo</mat-label>
         <input formControlName="tipo"  matInput autocomplete="off">
                  </mat-form-field>
-    </mat-grid-tile>
+    </mat-grid-tile>-->
+    <mat-grid-tile>
+        <mat-form-field appearance="outline" class="fde" class="mat-select">
+            <mat-label>Tipo</mat-label>
+            <mat-select input formControlName="tipo"  matInput autocomplete="off">
+              <mat-option value="Obra">Obra</mat-option>
+              <mat-option value="Ferreteria">Ferreteria</mat-option>
+            </mat-select>
+          </mat-form-field>
 
+    </mat-grid-tile>
 <mat-grid-tile > 
     <mat-form-field appearance="outline" class="fde" class="mat-form-field">
     <mat-label>Celular</mat-label>
@@ -49,24 +58,43 @@
        <mat-grid-tile [colspan]="2"> 
         <mat-form-field appearance="outline" class="fde">
         <mat-label class="fde">Ubicacion</mat-label>
-        <input formControlName="ubicacion"  matInput autocomplete="off">
+       <!--input  type="text" [ngModel]="display?.lat"  formControlName="ubicacion"  matInput autocomplete="off">-->
+       <input  type="text"  formControlName="ubicacion"  matInput autocomplete="off">
+        <!--<input type="text = {{display?.lat}}"   matInput autocomplete="off">-->
+        <!--{{display?.lat}}-->
+    
                  </mat-form-field>
+                
 </mat-grid-tile>   
         
+
+
         <mat-grid-tile [colspan]="2">
-            <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
-            <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
+         <!--   <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
+            <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>-->
         </mat-grid-tile>
         
       </mat-grid-list>
        
+      <google-map height="400px"
+            width="750px"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+</google-map>
+
+<div>Latitude: {{display?.lat}}</div>
+<div>Longitude: {{display?.lng}}</div>
   
+<button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
+<button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
   
     </form> 
 </mat-card>
 </div>
 <br>
 <br>
-        <button mat-flat-button color="primary" routerLink="" class="btn">Volver</button>
+        <button mat-flat-button color="primary" routerLink="/principal" class="btn">Volver</button>
       
     <br>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServService } from 'src/app/services/serv.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 @Component({
   selector: 'app-usuario',
@@ -17,6 +18,11 @@ export class UsuarioComponent implements OnInit{
   loading:boolean = false;
   form:FormGroup;
   id: number;
+ 
+  
+ 
+
+ 
 
   operacion: string = 'Agregar';
 
@@ -31,19 +37,41 @@ export class UsuarioComponent implements OnInit{
       apellido: ['',Validators.required],
       tipo: ['',Validators.required],
       telefono: ['',Validators.required],
-      ubicacion: ['',Validators.required],
+      //ubicacion: ['',Validators.required],
+      ubicacion: [''], // initialize with empty string
       detalle: ['',Validators.required],
+      
     })
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
-
     
-  }
+  } 
   
-   
   ngOnInit (): void {
   
   }
+  display: any;
+  center: google.maps.LatLngLiteral = {
+      lat: -17.3825,
+      lng: -66.1682
+  };
+  zoom = 15;
+  moveMap(event: google.maps.MapMouseEvent) {
+    if (event.latLng != null) this.center = (event.latLng.toJSON());
+}
 
+//move(event: google.maps.MapMouseEvent) {
+  //  if (event.latLng != null) this.display = event.latLng.toJSON();
+//}
+
+move(event: google.maps.MapMouseEvent) {
+  if (event.latLng != null) {
+    this.display = event.latLng.toJSON();
+    const ubicacion = this.form.get('ubicacion');
+    if (ubicacion != null) {
+      ubicacion.setValue(JSON.stringify(this.display));
+    }
+  }
+}
   agregarEditarPersonal() {
     /* const nombre = this.form.get('nombre')?.value; */
 
@@ -55,6 +83,7 @@ export class UsuarioComponent implements OnInit{
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+      
     }
 
 
@@ -72,6 +101,7 @@ export class UsuarioComponent implements OnInit{
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+      
        
 
     }
@@ -91,6 +121,8 @@ export class UsuarioComponent implements OnInit{
       horizontalPosition: 'right',
     });
   }
+
+
 }
 
 

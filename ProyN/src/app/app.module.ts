@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import{ AngularFireModule } from '@angular/fire/compat';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,12 +14,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './Shared/shared.module';
 import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.component';
+import { IULOGINComponent } from './Components/iulogin/iulogin.component';
+import { RecuperarComponent } from './Components/recuperar/recuperar.component';
+import { environment } from 'src/environments/environment';
 
-//Angular modulos
-
-
-
-
+//Angular modulo
 
 @NgModule({
   declarations: [
@@ -26,13 +27,16 @@ import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.compon
     UsuarioComponent,
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
-    VerUsuarioComponent
+    VerUsuarioComponent,
+    IULOGINComponent,
+    RecuperarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
     
 
  
