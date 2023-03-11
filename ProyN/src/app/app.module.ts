@@ -17,6 +17,7 @@ import { VerUsuarioComponent } from './Components/ver-usuario/ver-usuario.compon
 import { IULOGINComponent } from './Components/iulogin/iulogin.component';
 import { RecuperarComponent } from './Components/recuperar/recuperar.component';
 import { environment } from 'src/environments/environment';
+import { MarcadorComponent } from './Components/marcador/marcador.component';
 
 //Angular modulo
 
@@ -29,7 +30,8 @@ import { environment } from 'src/environments/environment';
     EliminarUsuarioComponent,
     VerUsuarioComponent,
     IULOGINComponent,
-    RecuperarComponent
+    RecuperarComponent,
+    MarcadorComponent
   ],
   imports: [
     BrowserModule,
