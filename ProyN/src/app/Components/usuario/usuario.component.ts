@@ -177,7 +177,12 @@ getLocation() {
       horizontalPosition: 'right',
     });
   }
-
+  enviarWhatsApp() {
+    const telefono = '59170776212'; // Reemplaza con el número de teléfono deseado
+    const mensaje = `Hola, te contacto desde la empresa. Los datos de registro son:\n\nNombre: ${this.form.value.nombre} ${this.form.value.apellido}\nTipo: ${this.form.value.tipo}\nTeléfono: ${this.form.value.telefono}\nDetalle: ${this.form.value.detalle}\nPedido: ${this.form.value.pedido}\nCantidad: ${this.form.value.cantidad}\nColor: ${this.form.value.color}\nPrecio: ${this.form.value.precio}\nUbicación: ${this.form.value.ubicacion}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
+    window.open(whatsappUrl);
+  }
 
 }
 
