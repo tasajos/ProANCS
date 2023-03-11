@@ -82,9 +82,12 @@
   showFirstLastButtons
   aria-label="Select page of periodic elements">
 </mat-paginator>
+
  <br>
         <button mat-flat-button color="primary" routerLink="/principal" class="btn">Volver</button>
-        <button (click)="exportToExcel()">Exportar a Excel</button>
+        <button mat-raised-button color="accent" (click)="exportToExcel()" class="btn2"> Exportar a Excel</button>
+
+       
       
   
 </div>
