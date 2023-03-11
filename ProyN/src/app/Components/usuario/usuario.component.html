@@ -111,12 +111,15 @@
 
 <div>Latitude: {{display?.lat}}</div>
 <div>Longitude: {{display?.lng}}</div>
+<br>
+<button  mat-raised-button color="accent" (click)="getLocation()"  style="margin-bottom: 10px;">Obtener ubicación actual</button>
+  <br>
+  <br>
 
-  
 <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
 <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
-<button  mat-raised-button color="accent" (click)="getLocation()">Obtener ubicación actual</button>
-<button (click)="enviarWhatsApp()"  style="margin-bottom: 10px;" [disabled]="form.invalid" mat-flat-button color="primary" class="btn2">ENVIAR WHATSAPP</button>
+
+<button mat-raised-button color="accent" (click)="enviarWhatsApp()"  style="margin-bottom: 10px;" [disabled]="form.invalid" mat-flat-button color="primary" class="btn2">ENVIAR WHATSAPP</button>
 
 
   
