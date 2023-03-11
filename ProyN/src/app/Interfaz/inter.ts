@@ -12,4 +12,5 @@ cantidad: number,
 color: string,
 precio:number,
 
+
 }
