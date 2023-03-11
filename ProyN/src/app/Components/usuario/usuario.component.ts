@@ -18,11 +18,7 @@ export class UsuarioComponent implements OnInit{
   loading:boolean = false;
   form:FormGroup;
   id: number;
- 
   
- 
-
- 
 
   operacion: string = 'Agregar';
 
@@ -40,6 +36,10 @@ export class UsuarioComponent implements OnInit{
       //ubicacion: ['',Validators.required],
       ubicacion: [''], // initialize with empty string
       detalle: ['',Validators.required],
+      pedido: ['',Validators.required],
+      cantidad: ['',Validators.required],
+      color: ['',Validators.required],
+      precio: ['',Validators.required],
       
     })
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
@@ -83,6 +83,11 @@ move(event: google.maps.MapMouseEvent) {
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+
+      pedido:this.form.value.pedido,
+      cantidad:this.form.value.cantidad,
+      color:this.form.value.color,
+      precio:this.form.value.precio,
       
     }
 
@@ -101,6 +106,10 @@ move(event: google.maps.MapMouseEvent) {
       ubicacion:this.form.value.ubicacion,
       tipo:this.form.value.tipo,
       detalle:this.form.value.detalle,
+      pedido:this.form.value.pedido,
+      cantidad:this.form.value.cantidad,
+      color:this.form.value.color,
+      precio:this.form.value.precio,
       
        
 

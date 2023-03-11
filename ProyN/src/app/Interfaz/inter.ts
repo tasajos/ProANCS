@@ -7,5 +7,9 @@ telefono:number,
 ubicacion: string,
 tipo: string,
 detalle:string,
+pedido:string,
+cantidad: number,
+color: string,
+precio:number,
 
 }
