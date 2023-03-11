@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { Inter } from 'src/app/Interfaz/inter';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServService } from 'src/app/services/serv.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -21,6 +22,12 @@ export class UsuarioComponent implements OnInit{
   
 
   operacion: string = 'Agregar';
+
+  center: google.maps.LatLngLiteral = {
+    lat: 0,
+    lng: 0
+  };
+
 
   @ViewChild('mapContainer') mapContainer!: ElementRef<HTMLDivElement>;
 
@@ -52,6 +59,8 @@ export class UsuarioComponent implements OnInit{
   } 
   
   ngOnInit (): void {
+
+    
   const mapOptions: google.maps.MapOptions = {
     center: this.center,
     zoom: this.zoom,
@@ -61,10 +70,10 @@ export class UsuarioComponent implements OnInit{
   }
   display: any;
   
-  center: google.maps.LatLngLiteral = {
-      lat: -17.3825,
-      lng: -66.1682
-  };
+ // center: google.maps.LatLngLiteral = {
+   //   lat: -17.3825,
+     // lng: -66.1682
+  //};
   zoom = 15;
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.center = (event.latLng.toJSON());
@@ -94,6 +103,21 @@ export class UsuarioComponent implements OnInit{
       }
     }
 
+}
+getLocation() {
+  if (navigator.geolocation) {
+    // Obtiene la posición actual
+    navigator.geolocation.getCurrentPosition(position => {
+      const latitud = position.coords.latitude;
+      const longitud = position.coords.longitude;
+      // Establece la ubicación en el campo del formulario
+      this.form.get('ubicacion')?.setValue(`${latitud},${longitud}`);
+      // Centra el mapa en la posición actual
+      this.center = { lat: latitud, lng: longitud };
+    });
+  } else {
+    console.log('La geolocalización no está soportada por este navegador.');
+  }
 }
   agregarEditarPersonal() {
     /* const nombre = this.form.get('nombre')?.value; */

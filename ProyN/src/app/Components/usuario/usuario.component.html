@@ -115,6 +115,8 @@
   
 <button [disabled]="form.invalid" type="submit" mat-flat-button color="primary"  class="btn2"> REGISTRAR</button>
 <button mat-raised-button routerLink="/listar" class="btn2"> VOLVER</button>
+<button (click)="getLocation()">Obtener ubicación actual</button>
+
   
     </form> 
 </mat-card>
